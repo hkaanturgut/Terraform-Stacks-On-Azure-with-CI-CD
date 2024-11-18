@@ -74,12 +74,12 @@ orchestrate "auto_approve" "safe_plans" {
   check {
     # Ensure that no resources are being removed
     condition = context.plan.changes.remove == 0
-    reason = "Plan has ${context.plan.changes.remove} resources to be removed."
+    reason    = "Plan has ${context.plan.changes.remove} resources to be removed."
   }
 
-  action {
-    # Automatically approve the plan if the condition is met
-    when = context.plan.changes.remove == 0
-    approve = true
+  check {
+    # Ensure that changes are applyable
+    condition = context.plan.applyable
+    reason    = "Changes are not applyable"
   }
 }
