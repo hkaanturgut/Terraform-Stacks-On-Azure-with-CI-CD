@@ -68,3 +68,18 @@ deployment "production" {
     }
   }
 }
+
+
+orchestrate "auto_approve" "safe_plans" {
+  check {
+    # Ensure that no resources are being removed
+    condition = context.plan.changes.remove == 0
+    reason = "Plan has ${context.plan.changes.remove} resources to be removed."
+  }
+
+  action {
+    # Automatically approve the plan if the condition is met
+    when = context.plan.changes.remove == 0
+    approve = true
+  }
+}
