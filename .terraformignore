@@ -1,7 +1,5 @@
 # Ignore the entire .terraform directory but not .terraform.lock.hcl
 .terraform/
-!.terraform.lock.hcl
-
 # Ignore provider binaries and unnecessary artifacts
 *.zip
 *.tar.gz
