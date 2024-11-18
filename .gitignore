@@ -1,0 +1,39 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+crash.log
+.terraform/
+.terraform.lock.hcl
+
+# Terraform variables
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+
+# Terraform environment variables
+.env
+.env.*
+
+# Terraform plans
+*.tfplan
+*.tfplan.*
+
+# Logs and debugging
+*.log
+*.out
+*.err
+debug.log
+
+# Ignore personal IDE/editor files
+.vscode/
+.idea/
+*.iml
+
+# Ignore sensitive credentials
+*.pem
+*.pfx
+*.key
+*.cer
+*.crt
+*.env
+*.enc
