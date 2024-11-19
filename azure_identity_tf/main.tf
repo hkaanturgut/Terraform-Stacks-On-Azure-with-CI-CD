@@ -43,7 +43,7 @@ resource "azuread_application_federated_identity_credential" "plan" {
     var.project_name,
     "stack",
     var.stack_name,
-    "subscription",
+    "deployment",
     each.value,
     "operation",
     "plan"
@@ -67,7 +67,7 @@ resource "azuread_application_federated_identity_credential" "apply" {
     var.project_name,
     "stack",
     var.stack_name,
-    "subscription",
+    "deployment",
     each.value,
     "operation",
     "apply"
