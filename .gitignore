@@ -6,7 +6,6 @@ crash.log
 # .terraform.lock.hcl
 
 # Terraform variables
-*.tfvars
 *.tfvars.json
 *.auto.tfvars
 
