@@ -39,7 +39,7 @@ deployment "development" {
 
     azurerm_provider = {
       identity_token = identity_token.azurerm.jwt
-      client_id = "ed9c5f2e-c18b-4d99-bfac-eeccaf623508"
+      client_id = "d40c2363-af63-4f70-9170-a45923849321"
       subscription_id = "e8760043-8652-49f9-b487-4b27daf3ec7a"
       tenant_id = "1a93b615-8d62-418a-ac28-22501cf1f978"
     }
@@ -83,7 +83,7 @@ deployment "production" {
   }
     azurerm_provider = {
       identity_token = identity_token.azurerm.jwt
-      client_id = "ed9c5f2e-c18b-4d99-bfac-eeccaf623508"
+      client_id = "d40c2363-af63-4f70-9170-a45923849321"
       subscription_id = "cfd475e4-2732-4ec6-b819-5580d3656b25"
       tenant_id = "1a93b615-8d62-418a-ac28-22501cf1f978"
     } 
