@@ -28,7 +28,7 @@ deployment "development" {
 
     azurerm_provider = {
       identity_token = identity_token.azurerm.jwt
-      client_id = "1a493a19-46a6-44d0-8033-43530f6b6823"
+      client_id = "ed9c5f2e-c18b-4d99-bfac-eeccaf623508"
       subscription_id = "e8760043-8652-49f9-b487-4b27daf3ec7a"
       tenant_id = "1a93b615-8d62-418a-ac28-22501cf1f978"
     }

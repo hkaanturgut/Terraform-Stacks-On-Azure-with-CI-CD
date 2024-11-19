@@ -20,10 +20,10 @@ component "demo_storage_account" {
 
   inputs = {
 
-    environment              = component.demo_resource_group.outputs.environment
-    location                 = component.demo_resource_group.outputs.location
+    environment              = component.demo_resource_group.environment
+    location                 = component.demo_resource_group.location
     workload                 = "demo"
-    resource_group_name      = component.demo_resource_group.outputs.name
+    resource_group_name      = component.demo_resource_group.name
     access_tier              = "Hot"
     account_tier             = var.demo_storage_account.account_tier
     account_replication_type = var.demo_storage_account.account_replication_type
