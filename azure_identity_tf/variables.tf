@@ -1,19 +1,24 @@
+variable "subscriptions" {
+  description = "Map of subscription IDs to names"
+  type        = map(string)
+}
+
 variable "deployment_names" {
+  description = "List of deployment names"
   type        = list(string)
-  description = "List of Terraform stack deployment names"
 }
 
 variable "organization_name" {
+  description = "Organization name"
   type        = string
-  description = "HCP Terraform organization name"
 }
 
 variable "project_name" {
+  description = "Project name"
   type        = string
-  description = "HCP Terraform project name"
 }
 
 variable "stack_name" {
+  description = "Stack name"
   type        = string
-  description = "Terraform stack name"
 }
