@@ -1,0 +1,13 @@
+# Ignore the entire .terraform directory but not .terraform.lock.hcl
+.terraform/
+# Ignore provider binaries and unnecessary artifacts
+*.zip
+*.tar.gz
+*.tgz
+*.exe
+*.bin
+
+# Ignore editor and system-specific files
+.DS_Store
+Thumbs.db
+*.log

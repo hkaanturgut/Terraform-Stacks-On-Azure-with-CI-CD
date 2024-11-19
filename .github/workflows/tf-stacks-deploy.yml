@@ -1,0 +1,54 @@
+name: Deploy Terraform Stacks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Terraform
+      run: |
+        wget https://releases.hashicorp.com/terraform/1.10.0-alpha20240926/terraform_1.10.0-alpha20240926_linux_amd64.zip
+        unzip terraform_1.10.0-alpha20240926_linux_amd64.zip
+        sudo mv terraform /usr/local/bin/
+        terraform -version
+
+    - name: Install Terraform Stacks CLI
+      run: |
+        wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+        echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+        sudo apt update && sudo apt install -y terraform-stacks-cli
+
+    - name: Set up Terraform Cloud credentials
+      run: |
+        mkdir -p ~/.terraform.d
+        echo "{\"credentials\": {\"app.terraform.io\": {\"token\": \"$TERRAFORM_CLOUD_TOKEN\"}}}" > ~/.terraform.d/credentials.tfrc.json
+      env:
+        TERRAFORM_CLOUD_TOKEN: ${{ secrets.TERRAFORM_CLOUD_TOKEN }}
+
+    - name: Initialize Terraform Stacks
+      run: |
+        tfstacks init
+
+    - name: Validate Terraform Stacks
+      run: |
+        tfstacks validate
+
+    - name: Lock Providers
+      run: |
+        tfstacks providers lock
+
+    - name: Plan Terraform Stacks Deployment
+      run: |
+        tfstacks plan -organization=Kaan-Organization -stack=st-W7wPDE84UvArRbwk -deployment=development
+
