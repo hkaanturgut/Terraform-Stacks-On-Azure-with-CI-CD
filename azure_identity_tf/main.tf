@@ -3,7 +3,7 @@ data "azurerm_subscription" "current" {}
 
 # create an app registration
 resource "azuread_application" "hcp_terraform" {
-  display_name = "hcp-terraform-azure"
+  display_name = "hcp-terraform-azure-classic-01"
 }
 
 # create a service principal for the app

@@ -1,17 +1,12 @@
-component "demo_infra_stack_01" {
-  source = "./stacks/infrastructure_compute"
+component "demo_resource_group" {
+  source = "./modules/resource_group"
 
   inputs = {
-    demo_compute_resource_group = {
-      environment = var.central_variables.environment
-      location    = var.central_variables.location
-      tags = var.central_variables.tags
-    }
 
-    demo_storage_account = {
-      account_tier   = var.demo_storage_account.account_tier
-      account_replication_type = var.demo_storage_account.account_replication_type
-    }
+    environment = var.demo_resource_group.environment
+    location    = var.demo_resource_group.location
+    workload    = "compute"
+    tags        = var.demo_resource_group.tags
   }
 
   providers = {
@@ -20,25 +15,19 @@ component "demo_infra_stack_01" {
   }
 }
 
-component "demo_networking_stack_01" {
-  source = "./stacks/networking"
+component "demo_storage_account" {
+  source = "./modules/storage_account"
 
   inputs = {
-    demo_networking_resource_group = {
-      environment = var.central_variables.environment
-      location    = var.central_variables.location
-      tags = var.central_variables.tags
-    }
 
-    demo_virtual_network = {
-      cidr_range = var.demo_virtual_network.cidr_range
-      tags = var.central_variables.tags
+    environment              = component.demo_resource_group.outputs.environment
+    location                 = component.demo_resource_group.outputs.location
+    workload                 = "demo"
+    resource_group_name      = component.demo_resource_group.outputs.name
+    access_tier              = "Hot"
+    account_tier             = var.demo_storage_account.account_tier
+    account_replication_type = var.demo_storage_account.account_replication_type
 
-    }
-
-    demo_subnet_01 = {
-      address_prefixes = var.demo_subnet_01.address_prefixes
-    }
   }
 
   providers = {
