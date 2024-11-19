@@ -17,14 +17,25 @@ deployment "development" {
       account_replication_type = "LRS"
     }
 
+    demo_networking_resource_group = {
+      environment = "dev"
+      location = "canadacentral"
+      tags = {
+        environment = "development"
+      }
+    }
 
-    # demo_virtual_network = {
-    #   cidr_range = "10.0.0.0/16"
-    # }
 
-    # demo_subnet_01 = {
-    #   address_prefixes = ["10.0.16.0/20"]
-    # }
+    demo_virtual_network = {
+      cidr_range = "10.0.0.0/16"
+      tags = {
+        environment = "development"
+      }
+    }
+
+    demo_subnet_01 = {
+      address_prefixes = ["10.0.16.0/20"]
+    }
 
     azurerm_provider = {
       identity_token = identity_token.azurerm.jwt
