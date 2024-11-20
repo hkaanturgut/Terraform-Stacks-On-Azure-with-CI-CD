@@ -4,7 +4,7 @@ output "id" {
 
 output "environment" {
   value = var.environment
-  
+
 }
 
 output "name" {
