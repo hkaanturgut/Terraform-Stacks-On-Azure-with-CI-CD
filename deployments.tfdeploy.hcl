@@ -60,7 +60,7 @@ deployment "development" {
 }
     azurerm_provider = {
       identity_token = identity_token.azurerm.jwt
-      client_id = "5a116ab5-7932-43ad-83da-1ac2913be5ee"
+      client_id = "590367fb-e669-4c6d-8330-756130afe7af"
       subscription_id = "e8760043-8652-49f9-b487-4b27daf3ec7a"
       tenant_id = "1a93b615-8d62-418a-ac28-22501cf1f978"
     }
@@ -80,7 +80,7 @@ deployment "production" {
     }
     demo_storage_account = {
       account_tier = "Premium"
-      account_replication_type = "GZRS"
+      account_replication_type = "ZRS"
     }
 
     demo_networking_resource_group = {
@@ -126,7 +126,7 @@ deployment "production" {
 }
     azurerm_provider = {
       identity_token = identity_token.azurerm.jwt
-      client_id = "cab57bbf-ce87-45df-b7ed-aadf69a99eb1"
+      client_id = "a6676faf-8ecf-4180-9316-63a8a81a1f43"
       subscription_id = "cfd475e4-2732-4ec6-b819-5580d3656b25"
       tenant_id = "1a93b615-8d62-418a-ac28-22501cf1f978"
     } 
