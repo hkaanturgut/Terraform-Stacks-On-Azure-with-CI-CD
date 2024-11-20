@@ -1,4 +1,4 @@
-component "demo_resource_group" {
+ component "demo_resource_group" {
   source = "./modules/resource_group"
 
   inputs = {
