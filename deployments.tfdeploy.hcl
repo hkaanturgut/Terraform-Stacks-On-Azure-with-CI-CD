@@ -110,3 +110,17 @@ deployment "development" {
 #     } 
 #   }
 # }
+
+orchestrate "auto_approve" "safe_plans" {
+  check {
+    # Ensure that no resources are being removed
+    condition = context.plan.changes.remove == 0
+    reason    = "Plan has ${context.plan.changes.remove} resources to be removed."
+  }
+
+  check {
+    # Ensure that changes are applyable
+    condition = context.plan.applyable
+    reason    = "Changes are not applyable"
+  }
+}
