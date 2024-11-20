@@ -64,3 +64,16 @@ The [`deployments.tfdeploy.hcl`](deployments.tfdeploy.hcl) file defines the depl
 This repository demonstrates how to use Terraform Stacks to manage Azure infrastructure with CI/CD. By creating service principals and federated identities, we ensure secure and efficient management of Azure resources. The reusable modules and components make it easy to define and deploy infrastructure, while the deployment configurations allow for consistent and repeatable deployments across different environments.
 
 Terraform Stacks and federated identities enable seamless integration with Terraform Cloud, allowing for secure and automated infrastructure management. This setup is ideal for organizations looking to implement infrastructure as code (IaC) and CI/CD practices for their Azure environments.
+
+## Documentation References
+
+For more information on Terraform Stacks, please refer to the following documentation:
+
+- [Terraform Stacks Language](https://developer.hashicorp.com/terraform/language/stacks)
+- [Terraform Stacks Explained](https://www.hashicorp.com/blog/terraform-stacks-explained)
+
+## Upcoming Presentation and Demo Video
+
+A presentation and demo video will be coming soon from the Toronto Hashicorp User Group. Stay tuned for updates!
+
+For more content, visit my YouTube channel: [Kaan in the Cloud](https://www.youtube.com/@KaanintheCloud)
