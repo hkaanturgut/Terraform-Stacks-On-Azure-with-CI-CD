@@ -52,3 +52,21 @@ variable "demo_subnet_01" {
   })
   
 }
+
+variable "demo_windows_vm" {
+  description = "Configuration for the demo Windows VM"
+  type = object({
+    vm_size                       = string
+    admin_username                = string
+    admin_password                = string
+    os_disk_caching               = string
+    os_disk_storage_account_type  = string
+    image_publisher               = string
+    image_offer                   = string
+    image_sku                     = string
+    image_version                 = string 
+    ip_configuration_name         = string
+    private_ip_address_allocation = string
+    tags                          = map(string)
+  })
+}

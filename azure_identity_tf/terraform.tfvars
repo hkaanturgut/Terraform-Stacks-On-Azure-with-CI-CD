@@ -1,8 +1,10 @@
+#Your cloud provider informations
 subscriptions = {
-  "cfd475e4-2732-4ec6-b819-5580d3656b25" = "production"
-  "e8760043-8652-49f9-b487-4b27daf3ec7a" = "development"
+  "production_subscription_id_here" = "production"
+  "development_subscription_id_here" = "development"
 }
 
+#Your Terraform Cloud organization informations
 deployment_names  = ["development", "production"]
 organization_name = "Kaan-Organization"
 project_name      = "Terraform-Stacks-Demo"

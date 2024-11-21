@@ -1,4 +1,6 @@
-component "demo_resource_group" {
+ #You can think components as your traditional terraform modules.Each component holds an instance i.e resource.
+ 
+ component "demo_resource_group" {
   source = "./modules/resource_group"
 
   inputs = {
@@ -92,3 +94,31 @@ component "demo_subnet_01" {
   
 }
 
+component "demo_windows_vm" {
+  source = "./modules/windows_virtual_machine"
+
+  inputs = {
+    environment           = component.demo_resource_group.environment
+    location              = component.demo_resource_group.location
+    resource_group_name   = component.demo_resource_group.name
+    virtual_network_name  = component.demo_virtual_network.name
+    subnet_id             = component.demo_subnet_01.id
+    vm_size               = var.demo_windows_vm.vm_size
+    admin_username        = var.demo_windows_vm.admin_username
+    admin_password        = var.demo_windows_vm.admin_password
+    os_disk_caching       = var.demo_windows_vm.os_disk_caching
+    os_disk_storage_account_type = var.demo_windows_vm.os_disk_storage_account_type
+    image_publisher       = var.demo_windows_vm.image_publisher
+    image_offer           = var.demo_windows_vm.image_offer
+    image_sku             = var.demo_windows_vm.image_sku
+    image_version         = var.demo_windows_vm.image_version
+    ip_configuration_name = var.demo_windows_vm.ip_configuration_name
+    private_ip_address_allocation = var.demo_windows_vm.private_ip_address_allocation
+    workload            = "demo"
+    tags                  = var.demo_windows_vm.tags
+  }
+
+  providers = {
+    azurerm = provider.azurerm.this
+  }
+}
