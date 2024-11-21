@@ -1,1 +1,3 @@
+##This file contains the terraform version that should be used for the project, you must have this file in the root of the project with this beta version installed
+
 1.10.0-alpha20240926

@@ -80,4 +80,4 @@ For more content, visit my YouTube channel: [Kaan in the Cloud](https://www.yout
 
 ## Access the Presentation
 
-You can access the PowerPoint presentation [here](PowerPoint Slide/Terraform Stacks Presentation - November 20, 2024).
+You can access the PowerPoint presentation [here](PowerPoint_Slide/Terraform-Stacks-Presentation-November-20-2024.pptx).

@@ -1,3 +1,5 @@
+ #You can think components as your traditional terraform modules.Each component holds an instance i.e resource.
+ 
  component "demo_resource_group" {
   source = "./modules/resource_group"
 

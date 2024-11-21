@@ -50,5 +50,5 @@ jobs:
 
     - name: Plan Terraform Stacks Deployment
       run: |
-        tfstacks plan -organization=Kaan-Organization -stack=st-KTYyQLSbKRpyP4Pm -deployment=development
+        tfstacks plan -organization=<your-hcp-organization> -stack=<your-stack-id> -deployment=<your-deployment-name>
 

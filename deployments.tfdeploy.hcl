@@ -1,7 +1,10 @@
+# this identity token is used to authenticate with Azure - this depends on the choice of your cloud provider
 identity_token "azurerm" {
   audience = [ "api://AzureADTokenExchange" ]
 }
 
+
+#deployment block is used to define the deployment configuration - this is the last layer which is used to define the inputs for the components
 deployment "development" {
   inputs = {
     
@@ -60,9 +63,9 @@ deployment "development" {
 }
     azurerm_provider = {
       identity_token = identity_token.azurerm.jwt
-      client_id = "590367fb-e669-4c6d-8330-756130afe7af"
-      subscription_id = "e8760043-8652-49f9-b487-4b27daf3ec7a"
-      tenant_id = "1a93b615-8d62-418a-ac28-22501cf1f978"
+      client_id = <your-spn-client-id>
+      subscription_id = <your-dev-subscription-id>
+      tenant_id = <your-tenant-id>
     }
   }
 }
@@ -126,13 +129,15 @@ deployment "production" {
 }
     azurerm_provider = {
       identity_token = identity_token.azurerm.jwt
-      client_id = "a6676faf-8ecf-4180-9316-63a8a81a1f43"
-      subscription_id = "cfd475e4-2732-4ec6-b819-5580d3656b25"
-      tenant_id = "1a93b615-8d62-418a-ac28-22501cf1f978"
-    } 
+      client_id = <your-spn-client-id>
+      subscription_id = <your-dev-subscription-id>
+      tenant_id = <your-tenant-id>
+    }
   }
 }
 
+
+#orchestration block is used to define the orchestration configuration - you can have multiple checks and triggers defined here
 orchestrate "auto_approve" "safe_plans" {
   check {
     # Ensure that no resources are being removed
