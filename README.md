@@ -77,3 +77,7 @@ For more information on Terraform Stacks, please refer to the following document
 A presentation and demo video will be coming soon from the Toronto Hashicorp User Group. Stay tuned for updates!
 
 For more content, visit my YouTube channel: [Kaan in the Cloud](https://www.youtube.com/@KaanintheCloud)
+
+## Access the Presentation
+
+You can access the PowerPoint presentation [here](PowerPoint Slide/Terraform Stacks Presentation - November 20, 2024).
