@@ -2,6 +2,16 @@
 
 This repository demonstrates the use of Terraform Stacks to manage Azure infrastructure with CI/CD. It includes various Terraform modules and configurations to deploy resources on Azure using Terraform Cloud.
 
+## Video Demo
+
+[![Watch the video](https://img.youtube.com/vi/ZSZ-HRlNVd8/maxresdefault.jpg)](https://www.youtube.com/watch?v=ZSZ-HRlNVd8)
+
+For more content, visit my YouTube channel: [Kaan in the Cloud](https://www.youtube.com/@KaanintheCloud)
+
+## Access the Presentation
+
+You can access the PowerPoint presentation [here](PowerPoint_Slide/Terraform-Stacks-Presentation-November-20-2024.pptx).
+
 ## Repository Structure
 
 - [`.github/workflows`](.github/workflows): Contains GitHub Actions workflows for CI/CD.
@@ -71,13 +81,3 @@ For more information on Terraform Stacks, please refer to the following document
 
 - [Terraform Stacks Language](https://developer.hashicorp.com/terraform/language/stacks)
 - [Terraform Stacks Explained](https://www.hashicorp.com/blog/terraform-stacks-explained)
-
-## Upcoming Presentation and Demo Video
-
-A presentation and demo video will be coming soon from the Toronto Hashicorp User Group. Stay tuned for updates!
-
-For more content, visit my YouTube channel: [Kaan in the Cloud](https://www.youtube.com/@KaanintheCloud)
-
-## Access the Presentation
-
-You can access the PowerPoint presentation [here](PowerPoint_Slide/Terraform-Stacks-Presentation-November-20-2024.pptx).
